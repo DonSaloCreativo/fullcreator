@@ -945,22 +945,64 @@ footer {
 
   h1 {
     font-size: 32px;
+    text-align: center;
   }
 
   .subtitle {
     font-size: 15px;
     line-height: 1.65;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .eyebrow {
     font-size: 11px;
     line-height: 1.35;
     padding: 7px 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-grid > div:first-child,
+  .section-head,
+  .section-head h2,
+  .section-head p,
+  .card,
+  .card h3,
+  .card p,
+  .step,
+  .profile-copy,
+  .profile-copy h2,
+  .profile-copy p,
+  .cta,
+  .cta p,
+  .modal-copy,
+  .modal-copy h3,
+  .modal-copy p {
+    text-align: center;
+  }
+
+  .section-head {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions,
+  .cta-actions,
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-meta {
     gap: 12px;
     font-size: 12px;
+    justify-content: center;
+  }
+
+  .stack {
+    align-items: stretch;
   }
 
   .floating-card,
@@ -975,6 +1017,11 @@ footer {
   .floating-card,
   .card {
     padding: 18px;
+  }
+
+  .floating-card strong,
+  .floating-card p {
+    text-align: left;
   }
 
   .card {
@@ -993,6 +1040,10 @@ footer {
     line-height: 1.7;
   }
 
+  .checklist {
+    justify-items: center;
+  }
+
   .profile-card {
     min-height: 320px;
     padding: 18px;
@@ -1003,6 +1054,7 @@ footer {
     right: 20px;
     bottom: 20px;
     padding: 16px;
+    text-align: left;
   }
 
   .avatar {
@@ -1019,12 +1071,6 @@ footer {
 
   .workflow {
     grid-template-columns: 1fr;
-  }
-
-  .hero-actions,
-  .cta-actions,
-  .form-actions {
-    flex-direction: column;
   }
 
   .hero-actions .btn,
