@@ -1,4 +1,4 @@
-const logoTrack = document.querySelector(".logo-track");
+﻿const logoTrack = document.querySelector(".logo-track");
 const contactModal = document.querySelector("#contact-modal");
 const openContactButton = document.querySelector("[data-open-contact]");
 const closeContactButtons = document.querySelectorAll("[data-close-contact]");
@@ -68,6 +68,33 @@ if (contactModal && openContactButton) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       toggleModal(false);
+    }
+  });
+}
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+  const closeMenu = () => {
+    menuToggle.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    navLinks.classList.remove("is-open");
+  };
+
+  menuToggle.addEventListener("click", () => {
+    const shouldOpen = !navLinks.classList.contains("is-open");
+    menuToggle.classList.toggle("is-open", shouldOpen);
+    menuToggle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    navLinks.classList.toggle("is-open", shouldOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeMenu();
     }
   });
 }
