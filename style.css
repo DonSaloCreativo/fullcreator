@@ -554,7 +554,7 @@ section {
     radial-gradient(circle at top left, rgba(21, 230, 255, 0.12), transparent 22%),
     linear-gradient(180deg, rgba(14, 30, 49, 0.98), rgba(9, 20, 35, 0.96));
   box-shadow: var(--shadow);
-  padding: 22px 0;
+  padding: 24px 0;
   position: relative;
 }
 
@@ -588,13 +588,13 @@ section {
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding-right: 18px;
+  gap: 20px;
+  padding-right: 20px;
 }
 
 .logo-item {
-  min-width: 190px;
-  height: 82px;
+  min-width: 198px;
+  height: 86px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,8 +614,8 @@ section {
 
 .logo-item img {
   display: block;
-  max-width: 150px;
-  max-height: 52px;
+  max-width: 156px;
+  max-height: 56px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -875,8 +875,8 @@ footer {
   }
 
   .brand-logo {
-    height: 26px;
-    max-width: 190px;
+    height: 34px;
+    max-width: 250px;
   }
 
   .menu-toggle {
@@ -1094,13 +1094,13 @@ footer {
   }
 
   .logo-item {
-    min-width: 150px;
-    height: 72px;
+    min-width: 158px;
+    height: 74px;
   }
 
   .logo-item img {
-    max-width: 120px;
-    max-height: 44px;
+    max-width: 126px;
+    max-height: 46px;
   }
 
   .modal-dialog {
