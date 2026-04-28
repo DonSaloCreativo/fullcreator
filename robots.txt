@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fullcreator.cl/sitemap.xml
+Sitemap: https://fullcreator.cl/sitemap.xml
