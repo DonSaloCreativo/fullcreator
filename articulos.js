@@ -1,5 +1,5 @@
 const ARTICLES_API = "https://script.google.com/macros/s/AKfycbwdT-CW9y2YFWuNf-pEDmUrSyTfhWTs5gClUfQZg07gNWxEAoc1kNP0COIhVj8AGCKH/exec";
-const ARTICLES_SHEET_NAME = "Articulos";
+const ARTICLES_SHEET_NAMES = ["Publicaciones", "Articulos"];
 
 const DEMO_ARTICLES = [
   {
@@ -50,12 +50,23 @@ function mapArticle(item = {}) {
   return { title, summary, body, image, date, slug, status };
 }
 
+function isPublished(status) {
+  return String(status || "").trim().toLowerCase() === "publicado";
+}
+
 async function loadArticles() {
   try {
-    const response = await fetch(`${ARTICLES_API}?hoja=${encodeURIComponent(ARTICLES_SHEET_NAME)}`);
-    const data = await response.json();
-    const mapped = data.map(mapArticle).filter((article) => String(article.status || "").toLowerCase() === "publicado");
-    return mapped.length ? mapped : DEMO_ARTICLES;
+    for (const sheetName of ARTICLES_SHEET_NAMES) {
+      const response = await fetch(`${ARTICLES_API}?hoja=${encodeURIComponent(sheetName)}`);
+      const data = await response.json();
+      const mapped = data.map(mapArticle).filter((article) => isPublished(article.status));
+
+      if (mapped.length) {
+        return mapped;
+      }
+    }
+
+    return DEMO_ARTICLES;
   } catch (error) {
     console.error("No se pudieron cargar los artículos", error);
     return DEMO_ARTICLES;
@@ -138,7 +149,7 @@ function renderArticleDetail(article) {
 document.addEventListener("DOMContentLoaded", async () => {
   const currentSlug = getArticleSlug();
   const articles = (await loadArticles()).map(mapArticle);
-  const filteredArticles = articles.filter((article) => String(article.status || "").toLowerCase() === "publicado");
+  const filteredArticles = articles.filter((article) => isPublished(article.status));
 
   renderArticleList(filteredArticles);
 
