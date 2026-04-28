@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículos | FullCreator Lab</title>
+  <meta name="description" content="Lee artículos, ideas y aprendizajes aplicados de FullCreator Lab sobre IA, web, proyectos digitales y experiencia.">
+  <link rel="canonical" href="https://fullcreator.cl/articulos.html">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Artículos | FullCreator Lab">
+  <meta property="og:description" content="Artículos, ideas y aprendizajes aplicados sobre IA, web, creación digital y experiencia.">
+  <meta property="og:url" content="https://fullcreator.cl/articulos.html">
+  <meta property="og:site_name" content="FullCreator Lab">
+  <meta property="og:image" content="https://fullcreator.cl/images/logo.png">
+  <meta property="og:image:alt" content="Logo de FullCreator Lab">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Artículos | FullCreator Lab">
+  <meta name="twitter:description" content="Artículos y aprendizajes aplicados sobre IA, web, creación digital y experiencia.">
+  <meta name="twitter:image" content="https://fullcreator.cl/images/logo.png">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="apple-touch-icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <img src="./images/logo.png" alt="FullCreator Lab" class="brand-logo" fetchpriority="high" decoding="async">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="./index.html">Inicio</a>
+        <a href="./recursos.html">Recursos</a>
+        <a href="./articulos.html">Artículos</a>
+        <a href="./libros.html">Libros</a>
+        <a href="./index.html#contacto">Contacto</a>
+        <a class="nav-mobile-link" href="https://wa.me/5698436820" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
+      <a class="btn btn-primary nav-whatsapp" href="https://wa.me/5698436820" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy">
+          <span class="eyebrow">Artículos</span>
+          <h1>Ideas, aprendizajes y notas aplicadas</h1>
+          <p>Un espacio tipo blog para publicar artículos con criterio editorial, pero con una estructura simple que más adelante puedes alimentar desde un Sheet.</p>
+        </div>
+        <aside class="page-hero-side">
+          <strong>Preparado para Google Sheets</strong>
+          <p>La página ya está pensada para listar artículos, mostrar detalle por URL y luego conectarse a una pestaña con campos como título, resumen, texto, imagen, fecha y estado.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container article-layout">
+        <div>
+          <div class="articles-list" id="articles-list">
+            <div class="articles-grid" id="articles-grid"></div>
+            <div class="article-empty" id="articles-empty" hidden>
+              Aún no hay artículos publicados.
+            </div>
+          </div>
+
+          <article class="article-view hidden" id="article-view">
+            <button type="button" class="btn btn-secondary article-back" id="article-back">← Volver a artículos</button>
+            <img id="article-image" src="" alt="" hidden>
+            <div class="article-meta">
+              <span id="article-date"></span>
+              <span id="article-category">Artículo</span>
+            </div>
+            <h2 id="article-title"></h2>
+            <p class="subtitle" id="article-summary"></p>
+            <div class="article-body" id="article-body"></div>
+          </article>
+        </div>
+
+        <aside class="article-sidebar">
+          <h3>Cómo lo publicarás después</h3>
+          <p>Esta página puede conectarse a un Sheet con una pestaña tipo <strong>Artículos</strong> y campos como <strong>Título</strong>, <strong>Resumen</strong>, <strong>Texto</strong>, <strong>Imagen</strong>, <strong>Fecha</strong>, <strong>Slug</strong> y <strong>Estado</strong>.</p>
+          <p>Así puedes escribir desde una planilla y dejar que la web publique solo los artículos marcados como <strong>Publicado</strong>.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>FullCreator Lab © 2026</span>
+      <span>Artículos, ideas y aprendizaje aplicado</span>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+  <script src="./articulos.js" defer></script>
+</body>
+</html>
