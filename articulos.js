@@ -57,7 +57,10 @@ function isPublished(status) {
 async function loadArticles() {
   try {
     for (const sheetName of ARTICLES_SHEET_NAMES) {
-      const response = await fetch(`${ARTICLES_API}?hoja=${encodeURIComponent(sheetName)}`);
+      const response = await fetch(
+        `${ARTICLES_API}?hoja=${encodeURIComponent(sheetName)}&_=${Date.now()}`,
+        { cache: "no-store" }
+      );
       const data = await response.json();
       const mapped = data.map(mapArticle).filter((article) => isPublished(article.status));
 
@@ -66,10 +69,10 @@ async function loadArticles() {
       }
     }
 
-    return DEMO_ARTICLES;
+    return [];
   } catch (error) {
     console.error("No se pudieron cargar los artículos", error);
-    return DEMO_ARTICLES;
+    return [];
   }
 }
 
