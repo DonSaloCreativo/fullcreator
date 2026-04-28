@@ -54,14 +54,40 @@ function isPublished(status) {
   return String(status || "").trim().toLowerCase() === "publicado";
 }
 
+function loadArticlesJsonp(sheetName) {
+  return new Promise((resolve, reject) => {
+    const callbackName = `fullcreatorArticles_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+    const script = document.createElement("script");
+
+    window[callbackName] = (data) => {
+      try {
+        delete window[callbackName];
+      } catch (error) {
+        window[callbackName] = undefined;
+      }
+      script.remove();
+      resolve(Array.isArray(data) ? data : []);
+    };
+
+    script.onerror = () => {
+      try {
+        delete window[callbackName];
+      } catch (error) {
+        window[callbackName] = undefined;
+      }
+      script.remove();
+      reject(new Error(`No se pudo cargar la hoja ${sheetName}`));
+    };
+
+    script.src = `${ARTICLES_API}?hoja=${encodeURIComponent(sheetName)}&callback=${callbackName}&_=${Date.now()}`;
+    document.body.appendChild(script);
+  });
+}
+
 async function loadArticles() {
   try {
     for (const sheetName of ARTICLES_SHEET_NAMES) {
-      const response = await fetch(
-        `${ARTICLES_API}?hoja=${encodeURIComponent(sheetName)}&_=${Date.now()}`,
-        { cache: "no-store" }
-      );
-      const data = await response.json();
+      const data = await loadArticlesJsonp(sheetName);
       const mapped = data.map(mapArticle).filter((article) => isPublished(article.status));
 
       if (mapped.length) {
