@@ -168,8 +168,8 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) 300px;
-  gap: 46px;
+  grid-template-columns: minmax(0, 1.08fr) 276px;
+  gap: 38px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -248,14 +248,14 @@ h1 {
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   align-items: flex-end;
 }
 
 .floating-card {
   width: 100%;
-  padding: 18px 20px;
-  border-radius: 18px;
+  padding: 16px 18px;
+  border-radius: 16px;
   background: linear-gradient(180deg, rgba(12, 28, 48, 0.98), rgba(8, 18, 32, 0.95));
   border: 1px solid rgba(50, 95, 136, 0.35);
   box-shadow: var(--shadow);
@@ -274,8 +274,8 @@ h1 {
 
 .floating-card .tag {
   display: inline-block;
-  margin-bottom: 12px;
-  font-size: 11px;
+  margin-bottom: 10px;
+  font-size: 10px;
   color: var(--aqua);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -283,13 +283,13 @@ h1 {
 
 .floating-card strong {
   display: block;
-  font-size: 17px;
+  font-size: 15px;
   margin-bottom: 4px;
 }
 
 .floating-card p {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.55;
   color: var(--muted);
 }
 
