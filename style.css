@@ -1240,6 +1240,10 @@ footer {
     line-height: 1.3;
   }
 
+  .apps-showcase .section-head h2 {
+    color: #d8b14a;
+  }
+
   .card p,
   .profile-copy p,
   .step p {
