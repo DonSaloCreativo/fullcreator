@@ -1302,26 +1302,74 @@ footer {
     padding: 18px;
   }
 
+  .floating-card {
+    padding: 14px 16px;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .floating-card::before {
+    width: 86px;
+    height: 86px;
+    inset: auto -10px -12px auto;
+    opacity: 0.42;
+  }
+
+  .floating-card .tag {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .floating-card strong {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
   .lab-bridge {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
     padding: 20px 18px;
     border-radius: 20px;
   }
 
+  .lab-bridge-copy,
+  .lab-bridge-action {
+    width: 100%;
+    position: static;
+  }
+
   .lab-bridge-copy h3 {
-    font-size: 26px;
+    font-size: 22px;
+    line-height: 1.06;
+    margin-bottom: 10px;
   }
 
   .lab-bridge-copy p {
+    max-width: none;
     font-size: 14px;
+    line-height: 1.65;
   }
 
   .lab-bridge-action {
-    width: 100%;
+    margin-top: 6px;
+    display: flex;
+    justify-content: stretch;
   }
 
   .lab-bridge-action .btn {
     width: 100%;
     min-width: 0;
+    max-width: none;
+    min-height: 48px;
+    padding: 0 16px;
+    justify-content: center;
+    color: #fff7ef;
+    border-color: rgba(255, 176, 116, 0.42);
+    background: linear-gradient(90deg, #ff9a4a 0%, #ff7a1a 100%);
+    box-shadow: 0 10px 28px rgba(255, 122, 26, 0.26);
   }
 
   .demo-device-body,
@@ -2233,6 +2281,44 @@ footer {
     padding: 20px;
   }
 
+  .web-demos-grid {
+    gap: 12px;
+  }
+
+  .web-demos-grid .explore-card,
+  .web-demo-card {
+    min-height: 0;
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .web-demo-card h3 {
+    max-width: none;
+    font-size: 17px;
+    line-height: 1.1;
+  }
+
+  .web-demo-card p {
+    max-width: none;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .web-demo-card small {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .web-demo-card .explore-cta {
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .explore-kicker {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
   .explore-section {
     margin: 18px 0 8px;
   }
@@ -2249,3 +2335,5 @@ footer {
     font-size: 24px;
   }
 }
+
+
