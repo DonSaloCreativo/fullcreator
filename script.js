@@ -6,7 +6,9 @@ const closeContactButtons = document.querySelectorAll("[data-close-contact]");
 if (logoTrack) {
   let offset = 0;
   let frameId = 0;
-  let speed = 0.45;
+
+  const getBaseSpeed = () => (window.innerWidth <= 560 ? 0.68 : 0.45);
+  let speed = getBaseSpeed();
 
   const getLoopWidth = () => {
     const firstGroup = logoTrack.querySelector(".logo-group");
@@ -35,14 +37,19 @@ if (logoTrack) {
     frameId = requestAnimationFrame(animate);
   };
 
-  window.addEventListener("resize", start);
+  window.addEventListener("resize", () => {
+    speed = getBaseSpeed();
+    start();
+  });
 
   logoTrack.addEventListener("mouseenter", () => {
-    speed = 0.2;
+    if (window.innerWidth > 560) {
+      speed = 0.2;
+    }
   });
 
   logoTrack.addEventListener("mouseleave", () => {
-    speed = 0.45;
+    speed = getBaseSpeed();
   });
 
   start();

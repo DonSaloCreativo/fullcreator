@@ -2569,3 +2569,149 @@ footer {
     border-radius: 999px;
   }
 }
+
+/* =========================================================
+   Ajustes exclusivos para teléfono
+   ========================================================= */
+@media (max-width: 560px) {
+  /* Oculta el texto superior del hero solo en móvil */
+  .hero .eyebrow {
+    display: none;
+  }
+
+  /* Oculta el botón secundario "Ver servicios" solo en móvil */
+  .hero-actions .btn-secondary {
+    display: none;
+  }
+
+  /* En "Lo que hacemos", deja solo el título en móvil */
+  #servicios .section-head p {
+    display: none;
+  }
+
+  #servicios .section-head {
+    margin-bottom: 24px;
+  }
+}
+
+
+/* =========================================================
+   Reestructura home: tarjetas de servicios como puertas de entrada
+   ========================================================= */
+.service-card-linkable {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--aqua);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.service-card-link:hover {
+  color: #9af7ff;
+}
+
+.services-compact .card p {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 560px) {
+  .services-compact .card p {
+    display: block;
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .service-card-link {
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   Ajuste hero: botón FullCreator Lab
+   ========================================================= */
+@media (max-width: 560px) {
+  .hero-actions .btn-lab {
+    display: inline-flex;
+    width: 100%;
+    min-height: 46px;
+    padding: 0 18px;
+    color: #f9fbff;
+    background:
+      radial-gradient(circle at top left, rgba(21, 230, 255, 0.22), transparent 42%),
+      linear-gradient(90deg, rgba(106, 48, 214, 0.96) 0%, rgba(70, 28, 146, 0.98) 100%);
+    box-shadow: 0 10px 26px rgba(106, 48, 214, 0.28);
+  }
+}
+
+
+/* Enlace destacado hacia la plataforma de cursos */
+.nav-links a.nav-courses {
+  color: #c17cff;
+  font-weight: 800;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.nav-links a.nav-courses:hover {
+  color: #e6c9ff;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 820px) {
+  .nav-links a.nav-courses {
+    color: #d9b4ff !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 0;
+    box-shadow: none;
+    padding: 12px 14px;
+  }
+}
+
+/* =========================================================
+   Mobile: proceso compacto solo con títulos
+   ========================================================= */
+@media (max-width: 560px) {
+  .profile-process {
+    gap: 8px;
+    margin: 16px 0 22px;
+  }
+
+  .profile-process-card {
+    min-height: 0;
+    padding: 12px 14px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .profile-process-icon,
+  .profile-process-card p {
+    display: none !important;
+  }
+
+  .profile-process-card strong {
+    margin: 0 !important;
+    font-size: 14px;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
